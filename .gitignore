@@ -1,0 +1,7 @@
+.DS_Store
+*.swp
+*.log
+.firebaserc
+functions/package-lock.json
+node_modules/
+functions/.credentials/*
