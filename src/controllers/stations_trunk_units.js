@@ -1,7 +1,5 @@
 let { stations_trunk_units, currentId } = require('../../data/stations_trunk_units.json');
 
-console.log( stations_trunk_units);
-
 module.exports = {
     getStationsTrunkUnits: (req, res) => {
   	res.json({ stations_trunk_units});

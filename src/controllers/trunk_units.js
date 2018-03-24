@@ -5,6 +5,15 @@ module.exports = {
   	res.json({trunk_units});
   },
 
+  getTrunk_unit: (req, res) => {
+	let { name } = req.params;
+	const expresso = trunk_units.filter (trunk_unit => {
+	  return trunk_unit.name == name
+	});
+ 
+	res.json(expresso);
+  },
+
   addTrunk_unit: (req, res) => {
   	var { name } = req.body;
 

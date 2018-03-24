@@ -3,6 +3,7 @@ const router = express.Router();
 
 const {
 	getTrunk_units,
+	getTrunk_unit,
 	addTrunk_unit,
 	updateTrunk_unit,
 	deleteTrunk_unit
@@ -16,4 +17,7 @@ router.route('/:id')
 	.put(updateTrunk_unit)
 	.delete(deleteTrunk_unit)
 
+router.route('/:name')
+	.get(getTrunk_unit)
+	
 module.exports = router;
