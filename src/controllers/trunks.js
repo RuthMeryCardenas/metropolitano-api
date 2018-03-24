@@ -3,11 +3,11 @@ let { trunks, currentId } = require('../../data/trunks.json');
 console.log(trunks);
 
 module.exports = {
-  gettrunks: (req, res) => {
-  	res.json({trunk});
+  getTrunks: (req, res) => {
+  	res.json({trunks});
   },
 
-  addtrunk: (req, res) => {
+  addTrunk: (req, res) => {
   	var { name } = req.body;
 
   	trunks.push({
@@ -21,32 +21,32 @@ module.exports = {
   	});
   },
 
-//   updatetrunk: (req, res) => {
-//   	const { id } = req.params;
-//   	const { newName }  = req.body;
-//   	var found = false;
+   updateTrunk: (req, res) => {
+   	const { id } = req.params;
+   	const { newName }  = req.body;
+   	var found = false;
 
-//   	trunks.forEach((trunk, i) => {
-//   		if(!found && trunk.id === Number(id)) {
-// 			trunk.name = newName;
-//   		}
-//   	});
+   	trunks.forEach((trunk, i) => {
+   		if(!found && trunk.id === Number(id)) {
+ 			trunk.name = newName;
+   		}
+   	});
 
-//   	res.send('Successfully updated trunk');
-//   },
+   	res.send('Successfully updated trunk');
+   },
 
-//   deletetrunk: (req, res) => {
-//   	var id = req.params.id;
+   deleteTrunk: (req, res) => {
+   	var id = req.params.id;
 
-//   	var found = false;
+   	var found = false;
 
-//   	trunks.forEach(function(trunk, index) {
-//   		if(!found && trunk.id === Number(id)) {
-//   			trunks.splice(index, 1);
-//   		}
-//   	});
+   	trunks.forEach(function(trunk, index) {
+   		if(!found && trunk.id === Number(id)) {
+   			trunks.splice(index, 1);
+   		}
+   	});
 
-//   	res.send('successfully deleted trunk');
-//   }
+   	res.send('successfully deleted trunk');
+   }
 
 }

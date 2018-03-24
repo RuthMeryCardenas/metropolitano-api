@@ -10,43 +10,44 @@ const routesTrunks = require('./routes/trunks');
 const routesStations = require('./routes/stations');
 const routesStationsTrunkUnits = require('./routes/stations_trunk_units');
 
-// webpack
-const webpack = require('webpack');
-const webpackDevMiddleware = require('webpack-dev-middleware');
-const webpackConfig = require('../webpack.config');
 
 // settings
 app.set('port', process.env.PORT || 3000);
 
 // middlewares
-app.use(webpackDevMiddleware(webpack(webpackConfig)));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
 // routes
 
-const selectJson = [
-    'trunk_units',
-    'districts',
-    'trunks',
-    'stations',
-    'stations_trunk_units',
+// const selectJson = [
+//     'trunk_units',
+//     'districts',
+//     'trunks',
+//     'stations',
+//     'stations_trunk_units',
 
-  ].forEach(item => (`/${item}`));
+//   ].forEach(item => (`/${item}`));
+// console.log(selectJson);
+//   const selectRoute = [
+//     'routesTrunkUnits',
+//     'routesDistrictsistricts',
+//     'routesTrunks',
+//     'routesStations',
+//     'routesStationsTrunkUnits',
 
-  const selectRoute = [
-    'routesTrunkUnits',
-    'routesDistrictsistricts',
-    'routesTrunks',
-    'routesStations',
-    'routesStationsTrunkUnits',
+//   ].forEach(item => (`/${item}`));
+//   console.log(selectRoute);
 
-  ].forEach(item => (`/${item}`));
-
-// app.use('/products', routesProducts);
+ app.use('/trunks', routesTrunks);
+ app.use('/trunk_units', routesTrunkUnits);
+ app.use('/stations', routesStations);
+ app.use('/stations_trunk_units', rroutesStationsTrunkUnits);
+ app.use('/districts', routesDistricts);
 
 
-app.use(selectJson, selectRoute);
+
+// app.use(selectJson, selectRoute);
 
 app.use(express.static(path.join(__dirname, 'public')));
 

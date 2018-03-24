@@ -2,19 +2,19 @@ const express = require('express');
 const router = express.Router();
 
 const {
-	getProducts,
-	addProduct,
-	updateProduct,
-	deleteProduct
+	getTrunks,
+	addTrunk,
+	updateTrunk,
+	deleteTrunk
 } = require('../controllers/trunks');
 
 router.route('/')
-	.get(getProducts)
-	.post(addProduct)
+	.get(getTrunks)
+	.post(addTrunk)
 
 router.route('/:id')
-	.put(updateProduct)
-	.delete(deleteProduct)
+	.put(updateTrunk)
+	.delete(deleteTrunk)
 
 module.exports = router;
 
