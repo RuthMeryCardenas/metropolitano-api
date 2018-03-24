@@ -5,7 +5,7 @@ const app = express();
 
 // importing routes products
 const routesTrunkUnits = require('./routes/trunk_units');
-const routesDistricts = require('./routes/districts');
+const routesDistrics = require('./routes/districs');
 const routesTrunks = require('./routes/trunks');
 const routesStations = require('./routes/stations');
 const routesStationsTrunkUnits = require('./routes/stations_trunk_units');
@@ -42,8 +42,8 @@ app.use(bodyParser.urlencoded({extended:false}));
  app.use('/trunks', routesTrunks);
  app.use('/trunk_units', routesTrunkUnits);
  app.use('/stations', routesStations);
- app.use('/stations_trunk_units', rroutesStationsTrunkUnits);
- app.use('/districts', routesDistricts);
+ app.use('/stationsTrunkUnits', routesStationsTrunkUnits);
+ app.use('/districs', routesDistrics);
 
 
 

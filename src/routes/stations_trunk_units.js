@@ -2,18 +2,18 @@ const express = require('express');
 const router = express.Router();
 
 const {
-	getTrunks,
-	addTrunk,
-	updateTrunk,
-	deleteTrunk
-} = require('../controllers/trunks');
+	getStationsTrunkUnits,
+	addStationsTrunkUnit,
+	updateStationsTrunkUnit,
+	deleteStationsTrunkUnit
+} = require('../controllers/stations_trunk_units');
 
 router.route('/')
-	.get(getTrunks)
-	.post(addTrunk)
+	.get(getStationsTrunkUnits)
+	.post(addStationsTrunkUnit)
 
 router.route('/:id')
-	.put(updateTrunk)
-	.delete(deleteTrunk)
+	.put(updateStationsTrunkUnit)
+	.delete(deleteStationsTrunkUnit)
 
 module.exports = router;

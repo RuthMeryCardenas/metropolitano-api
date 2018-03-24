@@ -1,15 +1,15 @@
-let { trunks, currentId } = require('../../data/trunks.json');
+let { districs } = require('../../data/districs.json');
 
 module.exports = {
-  getTrunks: (req, res) => {
-  	res.json({trunks});
+    getDistrics: (req, res) => {
+  	res.json({ districs});
   },
 
-  addTrunk: (req, res) => {
+    addDistric: (req, res) => {
   	var { name } = req.body;
 
-  	trunks.push({
-  		id: trunks.length,
+  	 stations_trunk_units.push({
+  		id:  districs.length,
   		name
   	});
 
@@ -19,13 +19,13 @@ module.exports = {
   	});
   },
 
-   updateTrunk: (req, res) => {
+  updateDistric: (req, res) => {
    	const { id } = req.params;
    	const { newName }  = req.body;
    	var found = false;
 
-   	trunks.forEach((trunk, i) => {
-   		if(!found && trunk.id === Number(id)) {
+   	 districs.forEach((disc, i) => {
+   		if(!found && disc.id === Number(id)) {
  			trunk.name = newName;
    		}
    	});
@@ -33,12 +33,12 @@ module.exports = {
    	res.send('Successfully updated trunk');
    },
 
-   deleteTrunk: (req, res) => {
+   deleteDistric: (req, res) => {
    	var id = req.params.id;
 
    	var found = false;
 
-   	trunks.forEach(function(trunk, index) {
+   	 districs.forEach(function(trunk, index) {
    		if(!found && trunk.id === Number(id)) {
    			trunks.splice(index, 1);
    		}
