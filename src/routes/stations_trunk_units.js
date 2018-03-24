@@ -5,7 +5,8 @@ const {
 	getStationsTrunkUnits,
 	addStationsTrunkUnit,
 	updateStationsTrunkUnit,
-	deleteStationsTrunkUnit
+	deleteStationsTrunkUnit,
+	getStationsTrunkUnit
 } = require('../controllers/stations_trunk_units');
 
 router.route('/')
@@ -16,4 +17,7 @@ router.route('/:id')
 	.put(updateStationsTrunkUnit)
 	.delete(deleteStationsTrunkUnit)
 
+router.route('/:start/:name')
+	.get(getStationsTrunkUnit)
+	
 module.exports = router;

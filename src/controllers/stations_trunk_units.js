@@ -5,6 +5,18 @@ module.exports = {
   	res.json({ stations_trunk_units});
   },
 
+  getStationsTrunkUnit: (req, res) => {
+	let { start, name } = req.params;
+	let startPoint = start.toLowerCase() == 'norte' ? 'Norte' : 'Sur';
+	const direction = stations_trunk_units.filter (stations_trunk_unit => {
+	  return stations_trunk_unit.startPoint == startPoint
+	});
+	const stations = (direction[0].express).filter(expresso => {
+	  return expresso.name == name
+	});
+	res.json(stations);
+  },
+  
     addStationsTrunkUnit: (req, res) => {
   	var { name } = req.body;
 

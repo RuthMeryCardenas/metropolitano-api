@@ -1,10 +1,11 @@
 let { districs } = require('../../data/districs.json');
 
 module.exports = {
+
     getDistrics: (req, res) => {
   	res.json({ districs});
   },
-
+  
     addDistric: (req, res) => {
   	var { name } = req.body;
 

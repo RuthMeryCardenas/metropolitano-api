@@ -1,6 +1,30 @@
 let { trunks, currentId } = require('../../data/trunks.json');
 
 module.exports = {
+
+    /**
+   * @api {get} /Trunk retorna la lista de troncales
+   * @apiName GetTrunk
+   * @apiGroup Trunk
+   *
+   * @apiSuccess {Object[]} troncales           List of troncales.
+   * @apiSuccess {String}   troncales.id
+   * @apiSuccess {String}   troncales.name
+   * @apiSuccess {String}   troncales.description
+   *
+   * @apiSuccessExample {json} Success-Response:
+   * [
+   *   {
+		"trunk": {
+			"id": 1,
+			"name": "Troncal Norte",
+			"description": "",
+			"url": "https://workshop-metropolitan.herokuapp.com/trunks/1.json"
+			}
+   *   ...
+   *   }
+   * ]
+   */	
   getTrunks: (req, res) => {
   	res.json({trunks});
   },
