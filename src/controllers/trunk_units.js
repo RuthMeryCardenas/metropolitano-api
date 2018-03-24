@@ -35,7 +35,6 @@ module.exports = {
  *		}]
  *   }
  */	
- */	
   getTrunk_units: (req, res) => {
   	res.json({trunk_units});
   },
