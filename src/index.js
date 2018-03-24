@@ -42,7 +42,7 @@ app.use(bodyParser.urlencoded({extended:false}));
  app.use('/trunks', routesTrunks);
  app.use('/trunk_units', routesTrunkUnits);
  app.use('/stations', routesStations);
- app.use('/stations_trunk_units', rroutesStationsTrunkUnits);
+ app.use('/stations_trunk_units', routesStationsTrunkUnits);
  app.use('/districts', routesDistricts);
 
 
@@ -54,5 +54,3 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.listen(app.get('port'), () => {
 	console.log(`server on port ${app.get('port')}`);
 });
-
-

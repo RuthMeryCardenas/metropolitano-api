@@ -1,7 +1,5 @@
 let { trunks, currentId } = require('../../data/trunks.json');
 
-console.log(trunks);
-
 module.exports = {
   getTrunks: (req, res) => {
   	res.json({trunks});

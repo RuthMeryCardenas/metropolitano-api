@@ -17,4 +17,3 @@ router.route('/:id')
 	.delete(deleteTrunk)
 
 module.exports = router;
-
