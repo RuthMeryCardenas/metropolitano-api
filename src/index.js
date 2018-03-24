@@ -10,7 +10,6 @@ const routesTrunks = require('./routes/trunks');
 const routesStations = require('./routes/stations');
 const routesStationsTrunkUnits = require('./routes/stations_trunk_units');
 
-
 // settings
 app.set('port', process.env.PORT || 3000);
 
@@ -18,6 +17,13 @@ app.set('port', process.env.PORT || 3000);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
+
+app.get('/',(req ,resp) => {
+   resp.json({
+	   'version': 1.0 ,
+	   'name' :  'Metropolitano_API'
+   })
+});
 
  app.use('/trunks', routesTrunks);
  app.use('/trunk_units', routesTrunkUnits);
